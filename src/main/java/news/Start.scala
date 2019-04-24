@@ -1,0 +1,5 @@
+package news
+
+object Start {
+
+}
