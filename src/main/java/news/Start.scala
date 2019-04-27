@@ -23,7 +23,8 @@ object Start {
     val dataString2 = dataString1.withColumn(POLITIC_WORDS, col(WORDS).multiply(WORDS))
     dataString2.show()
 
-    val politic_words = Array("human rights", "Democrats")
+    val politic_words = List("human rights", "Democrats")
+
 
     val g: String => String = _.filter(_.equals(politic_words))
     val s = udf(g)
@@ -31,7 +32,7 @@ object Start {
   }
 }
 
-
+/*val salaries: List[Int] = List(10, 20, 30, 40, 50);*/
 
 
 
