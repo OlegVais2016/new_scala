@@ -23,7 +23,9 @@ object Start {
     val dataString2 = dataString1.withColumn(POLITIC_WORDS, col(WORDS).multiply(WORDS))
     dataString2.show()
 
-    val g: String => String = _.filter(_.equals("democrats"))
+    val politic_words = Array("human rights", "Democrats")
+
+    val g: String => String = _.filter(_.equals(politic_words))
     val s = udf(g)
     dataString2.withColumn("pol",s(col(WORDS))).show()
   }
